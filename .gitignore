@@ -1,0 +1,17 @@
+# 审查过程文件，不进入版本控制
+_review/
+
+# Python 脚本（项目整理用，非产品文件）
+*.py
+
+# docx-pipeline 过程文件（可重建）
+project.yaml
+output/
+work/
+
+# 二进制产物（走 GitHub Release）
+*.docx
+*.pdf
+
+# 临时文件
+*.tmp

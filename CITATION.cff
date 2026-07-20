@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this handbook in your academic or engineering work, please cite it as follows."
+title: "方法论与经验教训手册：AI协作实战50条"
+authors:
+  - name: "Acerolaorion"
+type: software
+abstract: "A compact, empirically-grounded handbook distilled from hands-on AI collaboration practice — 50 lessons spanning engineering discipline, multi-model review methodology, file format pitfalls, and quantitative research caveats. Serves as the companion 'error logbook' to the AI Collaboration Full-Lifecycle Framework."
+keywords:
+  - "AI collaboration"
+  - "multi-model review"
+  - "software engineering methodology"
+  - "lessons learned"
+  - "prompt engineering"
+  - "provenance tracking"
+license: CC-BY-4.0
+version: 1.0.0
+date-released: "2026-07-18"
+repository-code: "https://github.com/redamancy231-create/methodology-handbook"
+url: "https://github.com/redamancy231-create/methodology-handbook"
