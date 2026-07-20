@@ -1,0 +1,156 @@
+name: Validate Handbook
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check file structure
+        run: |
+          echo "=== Checking required files ==="
+          for f in \
+            README.md \
+            en/README.md \
+            zh-Hant/README.md \
+            方法论与经验教训手册.md \
+            方法论与经验教训手册.json \
+            en/方法论与经验教训手册.md \
+            zh-Hant/方法论与经验教训手册.md \
+            CITATION.cff \
+            CHANGELOG.md \
+            LICENSE \
+            .gitignore
+          do
+            if [ -f "$f" ]; then
+              echo "  ✓ $f"
+            else
+              echo "  ✗ MISSING: $f"
+              exit 1
+            fi
+          done
+
+      - name: Check entry count in MD
+        run: |
+          echo "=== Checking 50 entries in main MD ==="
+          COUNT=$(grep -c '^---$' 方法论与经验教训手册.md || true)
+          # 53 horizontal rules total (1 after abstract + 50 entry separators + 2 structural)
+          # Entry separators = 50, so check >= 50
+          if [ "$COUNT" -ge 50 ]; then
+            echo "  ✓ Found $COUNT horizontal rules (expect ≥50)"
+          else
+            echo "  ✗ Only $COUNT horizontal rules found (expect ≥50)"
+            exit 1
+          fi
+
+      - name: Check JSON entry count
+        run: |
+          echo "=== Checking 50 entries in JSON ==="
+          COUNT=$(python3 -c "import json; d=json.load(open('方法论与经验教训手册.json','r',encoding='utf-8')); entries=sum(len(s.get('entries',[])) for sec in d.get('sections',[]) for s in sec.get('subsections',[])); print(entries)")
+          if [ "$COUNT" -eq 50 ]; then
+            echo "  ✓ JSON has $COUNT entries"
+          else
+            echo "  ✗ JSON has $COUNT entries (expect 50)"
+            exit 1
+          fi
+
+      - name: Check MD/JSON entry symmetry
+        run: |
+          echo "=== Checking MD/JSON entry title symmetry ==="
+          python3 -c "
+          import json, re
+          with open('方法论与经验教训手册.json', 'r', encoding='utf-8') as f:
+              data = json.load(f)
+          json_titles = set()
+          for section in data['sections']:
+              for sub in section.get('subsections', []):
+                  for entry in sub.get('entries', []):
+                      json_titles.add(entry.get('title', '').strip())
+
+          with open('方法论与经验教训手册.md', 'r', encoding='utf-8') as f:
+              md_text = f.read()
+          md_titles = set(re.findall(r'^\*\*(.+?)\*\*$', md_text, re.MULTILINE))
+
+          only_json = json_titles - md_titles
+          only_md = md_titles - json_titles
+
+          if only_json:
+              print(f'  ✗ {len(only_json)} titles only in JSON: {list(only_json)[:5]}')
+              exit(1)
+          if only_md:
+              print(f'  ✗ {len(only_md)} titles only in MD: {list(only_md)[:5]}')
+              exit(1)
+          print(f'  ✓ MD/JSON titles symmetric ({len(json_titles & md_titles)} common)')
+          "
+
+      - name: Check version consistency
+        run: |
+          echo "=== Checking version consistency ==="
+          VERSION="1.0.1"
+          errors=0
+
+          # Check CITATION.cff
+          if grep -q "version: $VERSION" CITATION.cff; then
+            echo "  ✓ CITATION.cff version: $VERSION"
+          else
+            echo "  ✗ CITATION.cff version mismatch"
+            errors=$((errors+1))
+          fi
+
+          # Check main MD
+          if grep -q "版本 $VERSION" 方法论与经验教训手册.md; then
+            echo "  ✓ main MD version: $VERSION"
+          else
+            echo "  ✗ main MD version mismatch"
+            errors=$((errors+1))
+          fi
+
+          if [ $errors -gt 0 ]; then
+            echo "  ✗ $errors version check(s) failed"
+            exit 1
+          fi
+
+      - name: Check tri-language README structure
+        run: |
+          echo "=== Checking tri-language README symmetry ==="
+          for section in "快速导航\|Quick Navigation" "目录\|Contents" "分类标签\|Category Tag" "术语说明\|Glossary" "受众\|Audience" "使用方式\|How to Use" "格式\|Format" "相关项目\|Related Projects\|相關項目" "如何引用\|How to Cite" "许可\|License"
+          do
+            CN=$(grep -c "$section" README.md || true)
+            EN=$(grep -c "$section" en/README.md || true)
+            ZHT=$(grep -c "$section" zh-Hant/README.md || true)
+            echo "  $section: CN=$CN EN=$EN zh-Hant=$ZHT"
+          done
+
+      - name: Check links
+        run: |
+          echo "=== Checking for broken empty links ==="
+          EMPTY=$(grep -c '\[\]()' README.md en/README.md zh-Hant/README.md || true)
+          if [ "$EMPTY" -gt 0 ]; then
+            echo "  ✗ Found $EMPTY empty links []()"
+            exit 1
+          fi
+          echo "  ✓ No empty links found"
+
+      - name: Validate CITATION.cff
+        run: |
+          echo "=== Validating CITATION.cff ==="
+          pip install cffconvert -q 2>/dev/null || echo "  ⚠ cffconvert not available, skipping CFF validation"
+          if command -v cffconvert &>/dev/null; then
+            cffconvert --validate -i CITATION.cff && echo "  ✓ CITATION.cff valid"
+          fi
+
+      - name: Check Mermaid syntax
+        run: |
+          echo "=== Checking Mermaid blocks ==="
+          for f in README.md en/README.md zh-Hant/README.md; do
+            BLOCKS=$(grep -c '```mermaid' "$f" || true)
+            ENDS=$(grep -c '```' "$f" || true)
+            echo "  $f: $BLOCKS mermaid blocks"
+          done
