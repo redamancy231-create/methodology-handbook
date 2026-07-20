@@ -2,16 +2,16 @@
 
 - 当前阶段: v1.0.1（✅ 已发布）
 - 本轮完成:
- 1. 从 127 条记忆库中筛选 50 条方法论条目 → 四段结构（§1工程纪律/§2协作方法论/§3工具陷阱/§4量化专项）
- 2. md + json 双件发布（51→50 条，去个人化）
- 3. GPT-5.6-Sol 三角度审查 → 2 阻塞+12 建议 → 全部修复
- 4. 英文翻译（GPT-5.6-Sol 美式英语）
- 5. 正體中文（OpenCC s2t + GPT-5.6-Sol 校对 66 处）
- 6. 三语交叉链接 + 22 分类标签索引 + 术语附录
- 7. 补充 LICENSE/CITATION.cff/CHANGELOG.md/.gitignore
- 8. GitHub 发布 + Release v1.0.1（含 DOCX/PDF）
- 9. 项目页面完善（badges/Mermaid 生态图/快速导航/样例/引用/Fold）
- 10. GPT-5.6-Sol 项目页面审查 → 15 项建议全部修复
+ 1. md→docx 转换（docx-pipeline + Pandoc，带自动 TOC）
+ 2. 三语 README 重构：P0-P2 共 15 项 GPT-5.6-Sol 审查建议全修复
+ 3. CI 验证流水线（validate.yml）：文件结构/条目数/JSON-MD 对称/版本/链接/Mermaid
+ 4. CI 三次迭代修复（regex $ 锚点/单向检查/版本号漏改）
+ 5. Social Preview 图片生成 + 三语版本号统一
+ 6. docx-pipeline 已知限制新增 TOC 双插入条目（三语 README）
+ 7. 兄弟仓库反向链接（framework/review-toolkit/docx-pipeline 3/7）
+ 8. awesome-quant PR #469 语言标签修复 → 已合并
+ 9. framework 生态树图补充 methodology-handbook
+ 10. 小黑盒宣传帖 ×3 + GitHub 贡献策略目录重组
 - 发现的问题: 无
 
 ## 文档统计（2026-07-20）
@@ -36,6 +36,7 @@
 ## Next Steps
 
 - ✅ 发布到 GitHub — 已完成（2026-07-20）
-- 兄弟仓库反向链接（Framework/Review Toolkit/DOCX Pipeline 等 7 个）
-- GitHub Pages（可选）
-- Zenodo DOI（可选）
+- 兄弟仓库反向链接：✅ Framework / Review Toolkit / DOCX Pipeline → 待补 claude-skills / prompt-tdd / etf-pybind11 / ma-case-study（P2）
+- docx-pipeline 已知限制 TOC 条目已推送，待同步更新 en/zh-Hant 对应 README（P2）
+- GitHub Pages（可选）→ P2
+- Zenodo DOI（可选）→ P2
