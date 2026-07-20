@@ -1,34 +1,34 @@
 > [簡體中文](../README.md) | [English](../en/README.md) | 正體中文
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Lessons](https://img.shields.io/badge/Lessons-50-blue)]()
-[![簡體中文](https://img.shields.io/badge/lang-簡體中文-red)](../README.md)
-[![English](https://img.shields.io/badge/lang-English-blue)](../en/README.md)
-[![正體中文](https://img.shields.io/badge/lang-正體中文-green)]()
-
-```mermaid
-flowchart LR
-    FW["`**AI 協作框架**
-    16.8 萬字符系統方法論`"]
-    HB["`**方法論手冊**
-    4 章 50 條實戰速查`"]
-    FW -->|"提煉 / 互補"| HB
-    HB --> C1["§1 工程紀律<br/>9 條"]
-    HB --> C2["§2 AI 協作方法論<br/>32 條"]
-    HB --> C3["§3 文件格式與工具陷阱<br/>6 條"]
-    HB --> C4["§4 量化研究專項<br/>3 條"]
-    C2 -->|"最多條目"| REVIEW["多模型審查 9 條"]
-    C2 -->|"核心支柱"| PROV["provenance 3 條"]
-    C2 -->|"執行紀律"| BIAS["認知偏差 3 條"]
-```
-
 # 方法論與經驗教訓手冊
 
-**AI 協作項目全生命週期框架的精簡實戰版——50 條踩坑實證。**
+> 50 條來自真實 AI 協作項目的可檢索踩坑實證，覆蓋工程紀律、多模型審查、文件與工具陷阱，以及量化研究。
 
-版本 1.0 | 2026-07-18
+[📖 線上閱讀](./方法论与经验教训手册.md) · [📥 下載 PDF/DOCX](../../releases/latest) · [📊 機器可讀 JSON](./方法论与经验教训手册.json) · [📝 如何引用](#如何引用)
 
-> 與《AI 協作項目全生命週期框架》（16.8 萬字符）的關係類似於「教材」和「錯題本」：框架是系統方法論，手冊是把踩過的坑抽成速查條目。兩者互爲補充。原始記錄爲作者個人筆記，本手冊爲篩選整理後的公開發布版本。
+[![GitHub Release](https://img.shields.io/github/v/release/redamancy231-create/methodology-handbook)](../../releases/latest)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+> **適合查閱，不要求通讀。** 遇到代碼審查、項目發佈、配置錯誤或文檔生成問題時，按場景直接跳到對應條目。
+
+**代表性條目：**
+- 修改配置後，驗證系統實際讀取的是哪一個文件——而非猜測（§3.5）
+- 同一 AI 不應同時擔任設計者、執行者、驗證者和評分官（§2.2）
+- 發佈前檢查 `.gitignore` 排除的文件，而非僅檢查已追蹤的文件（§1.2）
+
+```mermaid
+flowchart TD
+    F["**AI Collaboration Framework**<br/>系統方法論 · 16.8 萬字符"]
+    H["**Methodology Handbook**<br/>50 條實戰速查 · 錯題本"]
+    R["**Independent Review Toolkit**<br/>審查方法的可執行實現"]
+    D["**DOCX Pipeline**<br/>文檔交付管線"]
+    C["**案例項目**<br/>ETF · M&A · Prompt-TDD<br/>實證與經驗來源"]
+
+    F -->|"提煉爲"| H
+    C -->|"提供實證"| H
+    H -->|"審查實踐"| R
+    H -->|"文檔交付"| D
+```
 
 ---
 
@@ -36,9 +36,23 @@ flowchart LR
 
 **A compact, battle-tested companion to the AI Collaboration Full-Lifecycle Framework — 50 empirically-grounded lessons.**
 
-Version 1.0 | 2026-07-18
+Version 1.0.1 | 2026-07-20
 
 > The relationship to the full framework (168K characters) is like "textbook" vs. "error logbook": the framework is the systematic methodology; this handbook distills the mistakes into quick-reference entries. Source material comes from the author's personal project notes, curated and published here.
+
+---
+
+## 快速導航
+
+- [開始使用](#使用方式--how-to-use)
+- [按問題場景查找](#使用方式--how-to-use)
+- [章節概覽](#目錄--contents)
+- [代表性條目](#分類標籤索引--category-tag-index)
+- [格式與下載](#格式--format)
+- [證據範圍與限制](#受衆與前置--audience--prerequisites)
+- [如何引用](#如何引用)
+- [相關項目](#相關項目--related-projects)
+- [許可](#許可--license)
 
 ---
 
@@ -56,6 +70,9 @@ Version 1.0 | 2026-07-18
 ---
 
 ## 分類標籤索引 / Category Tag Index
+
+<details>
+<summary>展開完整分類標籤索引（22 個標籤）</summary>
 
 | 標籤 | 含義 | 條目數 |
 |------|------|--------|
@@ -81,6 +98,8 @@ Version 1.0 | 2026-07-18
 | 編碼 | Windows 終端中文字符編碼 | 1 |
 | 配置 | 修改配置前確認系統讀取的文件 | 1 |
 | 量化研究 | 特徵泄漏、LambdaRank 敏感性、regime 滯後 | 3 |
+
+</details>
 
 ---
 
@@ -108,7 +127,7 @@ Version 1.0 | 2026-07-18
 
 **目標讀者**：使用 AI 編程工具（Claude Code、Codex CLI、Cursor 等）進行軟件工程或學術項目的開發者與研究者。假設讀者有基本的 AI 輔助編程經驗。
 
-**證據範圍**：手冊中的「實證」指作者在 2026 年 5-7 月間數十次 AI 協作項目中記錄的具體事件。數字（如"7/7 收斂""~11% 偏差"）來自單次觀測，適用範圍限於當時使用的模型版本和任務類型。應視爲**案例參考**而非統計結論。
+**證據範圍**：手冊中的「實證」指作者在 2026 年 5-7 月間多次 AI 協作項目中記錄的具體事件。數字（如"7/7 收斂""~11% 偏差"）來自單次觀測，適用範圍限於當時使用的模型版本和任務類型。應視爲**案例參考**而非統計結論。
 
 手冊爲 md/json 雙件發佈。md 是真相源（先於 json 生成）。
 
@@ -117,9 +136,10 @@ Version 1.0 | 2026-07-18
 ## 使用方式 / How to Use
 
 **查閱而非通讀。** 這不是教程——是速查手冊。遇到具體場景時按分類標籤定位：
-- 要做代碼審查 → §2.1 多模型審查策略
-- 要發佈項目 → §1.2 清理與發佈
-- 配置出了問題 → §3.5 配置文件
+
+- [要做代碼審查 → §2.1 多模型審查策略](./方法论与经验教训手册.md#21-多模型审查策略)
+- [要發佈項目 → §1.2 清理與發佈](./方法论与经验教训手册.md#12-清理与发布)
+- [配置出了問題 → §3.5 配置文件](./方法论与经验教训手册.md#35-配置文件)
 
 **Browse, don't read.** This is a reference, not a tutorial. Navigate by category tags when facing specific situations.
 
@@ -127,30 +147,55 @@ Version 1.0 | 2026-07-18
 
 ## 格式 / Format
 
-- `方法论与经验教训手册.md` — 人類可讀（含目錄、錨點鏈接、術語附錄）
-- `方法论与经验教训手册.json` — 機器可讀（結構化數據，`metadata` → `sections[]` → `subsections[]` → `entries[]`）
-
----
+- [📖 線上閱讀 Markdown](./方法论与经验教训手册.md) — 人類可讀（含目錄、錨點鏈接、術語附錄）
+- [📊 機器可讀 JSON](./方法论与经验教训手册.json) — 結構化數據（`metadata` → `sections[]` → `subsections[]` → `entries[]`）
+- [English handbook](./en/方法论与经验教训手册.md) — 美式英語翻譯（GPT-5.6-Sol 翻譯）
+- [正體中文手冊](./zh-Hant/方法论与经验教训手册.md) — 正體中文（OpenCC 轉換 + GPT-5.6-Sol 校對）
+- [📥 下載 PDF/DOCX](../../releases/latest) — Release 頁面提供最新版本
 
 ---
 
 ## 相關項目 | Related Projects
 
-| 項目 | 關係 |
-|------|------|
-| [**AI 協作項目全生命週期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | **上游來源** — 手冊 50 條從框架 16.8 萬字符中提煉 |
-| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **同級工具** — 審查方法論的具體實現 |
-| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同級項目** — 同系列的實驗方法論案例 |
-| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **同級工具** — 本手冊 docx 版即由此管線生成 |
-| [**claude-skills**](https://github.com/redamancy231-create/claude-skills) | **同級項目** — Skill 設計協議的經驗來源 |
-| [**ETF Pattern Match (pybind11)**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同級項目** — 多輪審查協議實證案例 |
-| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同級項目** — 六層框架的另一實證案例 |
+| 項目 | 角色 | 何時使用 |
+|------|------|---------|
+| [**AI 協作項目全生命週期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | 上游系統方法論 | 需要完整生命週期設計和方法論背景時 |
+| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | 審查方法的可執行實現 | 需要實施獨立審查、魔鬼代言人挑戰時 |
+| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | 實驗方法論案例 | 需要設計對照實驗、證據標註時 |
+| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | 文檔交付管線 | 需要生成和驗證 Markdown → DOCX/PDF 時 |
+| [**claude-skills**](https://github.com/redamancy231-create/claude-skills) | Skill 設計參考 | 需要創建或審查 Claude Code Skill 時 |
+| [**ETF Pattern Match (pybind11)**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | 實證案例 | 需要 Python/C++ 混合編程或多輪審查協議參考時 |
+| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | 實證案例 | 需要多階段學術流水線參考時 |
+
+---
+
+## 如何引用
+
+**普通文本引用：**
+
+> Acerolaorion. *方法論與經驗教訓手冊（Methodology & Lessons Learned Handbook）*. Version 1.0.1, 2026-07-20. CC BY 4.0.
+
+**BibTeX:**
+
+```bibtex
+@manual{methodology-handbook,
+  author       = {Acerolaorion},
+  title        = {方法論與經驗教訓手冊（Methodology \& Lessons Learned Handbook）},
+  version      = {1.0.1},
+  year         = {2026},
+  month        = jul,
+  url          = {https://github.com/redamancy231-create/methodology-handbook},
+  note         = {CC BY 4.0}
+}
+```
+
+也可引用 [`CITATION.cff`](../CITATION.cff)。如果修改或翻譯，請註明變更。
 
 ---
 
 ## 許可 / License
 
-CC-BY-4.0
+[CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 

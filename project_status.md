@@ -1,6 +1,6 @@
 ## 项目状态: 方法论与经验教训手册
 
-- 当前阶段: v1.0.1（三语版本就绪，待发布）
+- 当前阶段: v1.0.1（✅ 已发布）
 - 本轮完成:
  1. 从 127 条记忆库中筛选 50 条方法论条目 → 四段结构（§1工程纪律/§2协作方法论/§3工具陷阱/§4量化专项）
  2. md + json 双件发布（51→50 条，去个人化）
@@ -9,6 +9,9 @@
  5. 正體中文（OpenCC s2t + GPT-5.6-Sol 校对 66 处）
  6. 三语交叉链接 + 22 分类标签索引 + 术语附录
  7. 补充 LICENSE/CITATION.cff/CHANGELOG.md/.gitignore
+ 8. GitHub 发布 + Release v1.0.1（含 DOCX/PDF）
+ 9. 项目页面完善（badges/Mermaid 生态图/快速导航/样例/引用/Fold）
+ 10. GPT-5.6-Sol 项目页面审查 → 15 项建议全部修复
 - 发现的问题: 无
 
 ## 文档统计（2026-07-20）
@@ -32,4 +35,7 @@
 
 ## Next Steps
 
-- 发布到 GitHub → P1 → 等用户决定发布时机
+- ✅ 发布到 GitHub — 已完成（2026-07-20）
+- 兄弟仓库反向链接（Framework/Review Toolkit/DOCX Pipeline 等 7 个）
+- GitHub Pages（可选）
+- Zenodo DOI（可选）

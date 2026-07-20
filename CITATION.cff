@@ -13,7 +13,15 @@ keywords:
   - "prompt engineering"
   - "provenance tracking"
 license: CC-BY-4.0
-version: 1.0.0
-date-released: "2026-07-18"
+version: 1.0.1
+date-released: "2026-07-20"
 repository-code: "https://github.com/redamancy231-create/methodology-handbook"
 url: "https://github.com/redamancy231-create/methodology-handbook"
+preferred-citation:
+  type: manual
+  title: "Methodology & Lessons Learned Handbook"
+  authors:
+    - alias: "Acerolaorion"
+  version: "1.0.1"
+  date-released: "2026-07-20"
+  url: "https://github.com/redamancy231-create/methodology-handbook"
