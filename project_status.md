@@ -36,7 +36,7 @@
 ## Next Steps
 
 - ✅ 发布到 GitHub — 已完成（2026-07-20）
-- 兄弟仓库反向链接：✅ Framework / Review Toolkit / DOCX Pipeline → 待补 claude-skills / prompt-tdd / etf-pybind11 / ma-case-study（P2）
+- 兄弟仓库反向链接：✅ 7/7 全部完成（2026-07-20）
 - docx-pipeline 已知限制 TOC 条目已推送，待同步更新 en/zh-Hant 对应 README（P2）
 - GitHub Pages（可选）→ P2
 - Zenodo DOI（可选）→ P2
