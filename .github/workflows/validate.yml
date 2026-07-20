@@ -111,6 +111,22 @@ jobs:
             errors=$((errors+1))
           fi
 
+          # Check en MD
+          if grep -q "Version $VERSION" en/方法论与经验教训手册.md; then
+            echo "  ✓ en MD version: $VERSION"
+          else
+            echo "  ✗ en MD version mismatch"
+            errors=$((errors+1))
+          fi
+
+          # Check zh-Hant MD
+          if grep -q "版本 $VERSION" zh-Hant/方法论与经验教训手册.md; then
+            echo "  ✓ zh-Hant MD version: $VERSION"
+          else
+            echo "  ✗ zh-Hant MD version mismatch"
+            errors=$((errors+1))
+          fi
+
           if [ $errors -gt 0 ]; then
             echo "  ✗ $errors version check(s) failed"
             exit 1
