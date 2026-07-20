@@ -1,5 +1,27 @@
 > [簡體中文](../README.md) | [English](../en/README.md) | 正體中文
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Lessons](https://img.shields.io/badge/Lessons-50-blue)]()
+[![簡體中文](https://img.shields.io/badge/lang-簡體中文-red)](../README.md)
+[![English](https://img.shields.io/badge/lang-English-blue)](../en/README.md)
+[![正體中文](https://img.shields.io/badge/lang-正體中文-green)]()
+
+```mermaid
+flowchart LR
+    FW["`**AI 協作框架**
+    16.8 萬字符系統方法論`"]
+    HB["`**方法論手冊**
+    4 章 50 條實戰速查`"]
+    FW -->|"提煉 / 互補"| HB
+    HB --> C1["§1 工程紀律<br/>9 條"]
+    HB --> C2["§2 AI 協作方法論<br/>32 條"]
+    HB --> C3["§3 文件格式與工具陷阱<br/>6 條"]
+    HB --> C4["§4 量化研究專項<br/>3 條"]
+    C2 -->|"最多條目"| REVIEW["多模型審查 9 條"]
+    C2 -->|"核心支柱"| PROV["provenance 3 條"]
+    C2 -->|"執行紀律"| BIAS["認知偏差 3 條"]
+```
+
 # 方法論與經驗教訓手冊
 
 **AI 協作項目全生命週期框架的精簡實戰版——50 條踩坑實證。**
@@ -107,6 +129,22 @@ Version 1.0 | 2026-07-18
 
 - `方法论与经验教训手册.md` — 人類可讀（含目錄、錨點鏈接、術語附錄）
 - `方法论与经验教训手册.json` — 機器可讀（結構化數據，`metadata` → `sections[]` → `subsections[]` → `entries[]`）
+
+---
+
+---
+
+## 相關項目 | Related Projects
+
+| 項目 | 關係 |
+|------|------|
+| [**AI 協作項目全生命週期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | **上游來源** — 手冊 50 條從框架 16.8 萬字符中提煉 |
+| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **同級工具** — 審查方法論的具體實現 |
+| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同級項目** — 同系列的實驗方法論案例 |
+| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **同級工具** — 本手冊 docx 版即由此管線生成 |
+| [**claude-skills**](https://github.com/redamancy231-create/claude-skills) | **同級項目** — Skill 設計協議的經驗來源 |
+| [**ETF Pattern Match (pybind11)**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同級項目** — 多輪審查協議實證案例 |
+| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同級項目** — 六層框架的另一實證案例 |
 
 ---
 

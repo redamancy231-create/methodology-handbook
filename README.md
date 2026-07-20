@@ -1,5 +1,27 @@
 > 中文 | [English](en/README.md) | [正體中文](zh-Hant/README.md)
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Lessons](https://img.shields.io/badge/Lessons-50-blue)]()
+[![中文](https://img.shields.io/badge/lang-中文-red)]()
+[![English](https://img.shields.io/badge/lang-English-blue)](./en/README.md)
+[![正體中文](https://img.shields.io/badge/lang-正體中文-green)](./zh-Hant/README.md)
+
+```mermaid
+flowchart LR
+    FW["`**AI 协作框架**
+    16.8 万字符系统方法论`"]
+    HB["`**方法论手册**
+    4 章 50 条实战速查`"]
+    FW -->|"提炼 / 互补"| HB
+    HB --> C1["§1 工程纪律<br/>9 条"]
+    HB --> C2["§2 AI 协作方法论<br/>32 条"]
+    HB --> C3["§3 文件格式与工具陷阱<br/>6 条"]
+    HB --> C4["§4 量化研究专项<br/>3 条"]
+    C2 -->|"最多条目"| REVIEW["多模型审查 9 条"]
+    C2 -->|"核心支柱"| PROV["provenance 3 条"]
+    C2 -->|"执行纪律"| BIAS["认知偏差 3 条"]
+```
+
 # 方法论与经验教训手册
 
 **AI 协作项目全生命周期框架的精简实战版——50 条踩坑实证。**
@@ -109,6 +131,22 @@ Version 1.0 | 2026-07-18
 - `方法论与经验教训手册.json` — 机器可读（结构化数据，`metadata` → `sections[]` → `subsections[]` → `entries[]`）
 - `en/` — 美式英语翻译（GPT-5.6-Sol 翻译）
 - `zh-Hant/` — 正體中文（OpenCC 转换 + GPT-5.6-Sol 校对）
+
+---
+
+---
+
+## 相关项目 | Related Projects
+
+| 项目 | 关系 |
+|------|------|
+| [**AI 协作项目全生命周期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | **上游来源** — 手册 50 条从框架 16.8 万字符中提炼 |
+| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **同级工具** — 审查方法论的具体实现 |
+| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同级项目** — 同系列的实验方法论案例 |
+| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **同级工具** — 本手册 docx 版即由此管线生成 |
+| [**claude-skills**](https://github.com/redamancy231-create/claude-skills) | **同级项目** — Skill 设计协议的经验来源 |
+| [**ETF Pattern Match (pybind11)**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同级项目** — 多轮审查协议实证案例 |
+| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同级项目** — 六层框架的另一实证案例 |
 
 ---
 
