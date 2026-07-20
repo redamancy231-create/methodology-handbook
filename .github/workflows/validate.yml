@@ -76,7 +76,7 @@ jobs:
 
           with open('方法论与经验教训手册.md', 'r', encoding='utf-8') as f:
               md_text = f.read()
-          md_titles = set(re.findall(r'^\*\*(.+?)\*\*$', md_text, re.MULTILINE))
+          md_titles = set(re.findall(r'^\*\*(.+?)\*\*', md_text, re.MULTILINE))
 
           only_json = json_titles - md_titles
           only_md = md_titles - json_titles
