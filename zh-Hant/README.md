@@ -155,17 +155,10 @@ Version 1.0.1 | 2026-07-20
 
 ---
 
-## 相關項目 | Related Projects
 
-| 項目 | 角色 | 何時使用 |
-|------|------|---------|
-| [**AI 協作項目全生命週期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | 上游系統方法論 | 需要完整生命週期設計和方法論背景時 |
-| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | 審查方法的可執行實現 | 需要實施獨立審查、魔鬼代言人挑戰時 |
-| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | 實驗方法論案例 | 需要設計對照實驗、證據標註時 |
-| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | 文檔交付管線 | 需要生成和驗證 Markdown → DOCX/PDF 時 |
-| [**claude-skills**](https://github.com/redamancy231-create/claude-skills) | Skill 設計參考 | 需要創建或審查 Claude Code Skill 時 |
-| [**ETF Pattern Match (pybind11)**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | 實證案例 | 需要 Python/C++ 混合編程或多輪審查協議參考時 |
-| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | 實證案例 | 需要多階段學術流水線參考時 |
+## 相關專案
+
+更多專案請見 [個人主頁](https://github.com/redamancy231-create/redamancy231-create)
 
 ---
 
