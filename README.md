@@ -166,6 +166,7 @@ Version 1.0.1 | 2026-07-20
 | [**claude-skills**](https://github.com/redamancy231-create/claude-skills) | Skill 设计参考 | 需要创建或审查 Claude Code Skill 时 |
 | [**ETF Pattern Match (pybind11)**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | 实证案例 | 需要 Python/C++ 混合编程或多轮审查协议参考时 |
 | [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | 实证案例 | 需要多阶段学术流水线参考时 |
+| [**方法论提取方法论**](https://github.com/redamancy231-create/methodology-extraction-methodology) | **同系元层次项目**——从22个项目中系统提取方法论模式，本手册50条教训是其提取框架的证据来源之一 |
 
 ---
 
