@@ -1,0 +1,9 @@
+# Force linguist to detect languages in all files (fixes missing language bar for doc-heavy repos)
+* linguist-detectable=true
+
+# Markdown is the primary content
+*.md linguist-detectable=true
+*.json linguist-detectable=true
+
+# Image is an asset, not code
+og-image.png linguist-vendored
