@@ -155,18 +155,10 @@ Version 1.0.1 | 2026-07-20
 
 ---
 
-## 相关项目 | Related Projects
 
-| 项目 | 角色 | 何时使用 |
-|------|------|---------|
-| [**AI 协作项目全生命周期框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | 上游系统方法论 | 需要完整生命周期设计和方法论背景时 |
-| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | 审查方法的可执行实现 | 需要实施独立审查、魔鬼代言人挑战时 |
-| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | 实验方法论案例 | 需要设计对照实验、证据标注时 |
-| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | 文档交付管线 | 需要生成和验证 Markdown → DOCX/PDF 时 |
-| [**claude-skills**](https://github.com/redamancy231-create/claude-skills) | Skill 设计参考 | 需要创建或审查 Claude Code Skill 时 |
-| [**ETF Pattern Match (pybind11)**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | 实证案例 | 需要 Python/C++ 混合编程或多轮审查协议参考时 |
-| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | 实证案例 | 需要多阶段学术流水线参考时 |
-| [**方法论提取方法论**](https://github.com/redamancy231-create/methodology-extraction-methodology) | **同系元层次项目**——从22个项目中系统提取方法论模式，本手册50条教训是其提取框架的证据来源之一 |
+## 相关项目
+
+更多项目请见 [个人主页](https://github.com/redamancy231-create/redamancy231-create)
 
 ---
 
