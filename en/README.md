@@ -143,17 +143,10 @@ The handbook is published as an md/json pair. The md file is the source of truth
 
 ---
 
+
 ## Related Projects
 
-| Project | Role | When to Use |
-|---------|------|------------|
-| [**AI Collaboration Framework**](https://github.com/redamancy231-create/ai-collaboration-framework) | Upstream methodology | When you need full lifecycle design and methodological background |
-| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | Executable review protocol | When you need to conduct independent reviews or adversarial challenges |
-| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | Experimental methodology cases | When you need to design controlled experiments with evidence grading |
-| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | Document delivery pipeline | When you need to generate and validate Markdown → DOCX/PDF |
-| [**claude-skills**](https://github.com/redamancy231-create/claude-skills) | Skill design reference | When you need to create or review Claude Code Skills |
-| [**ETF Pattern Match (pybind11)**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | Empirical case | When you need Python/C++ hybrid or multi-round review protocol reference |
-| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | Empirical case | When you need a multi-phase academic pipeline reference |
+See more projects at [profile](https://github.com/redamancy231-create/redamancy231-create)
 
 ---
 
